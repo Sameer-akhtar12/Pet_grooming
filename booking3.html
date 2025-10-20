@@ -1,0 +1,138 @@
+<!-- page2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Summary</title>
+
+</body>
+</html>
+ <!-- page2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Summary</title>
+<style>
+     body {
+          font-family: Arial, sans-serif;
+          padding: 1rem;
+          background: #fff;
+          color: #333;
+        }
+        h1,h2, h3{
+          text-align:center;
+          color: #6a0dad;
+        }
+        .card {
+          background: #fff7db;
+          border: 1px solid #fcd34d;
+          padding: 1rem;
+          border-radius: 8px;
+          margin-bottom: 1rem;
+          max-width: 500px;
+          margin: 1rem auto;
+        }
+        
+        .payment-method {
+              
+              justify-content: center;
+              gap: 1rem;
+              margin-bottom: 1rem;
+            }
+        .payment-method button {
+        border: 2px solid #6a0dad;
+      background: #f3e8ff;
+      color: #6a0dad;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 20px;
+      cursor: pointer;
+            }
+            .payment-method button.active {
+              background-color: #8b5cf6;
+              color: white;
+            }
+            form {
+      max-width: 470px;
+      margin: auto;
+      border: 2px solid #a855f7;
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffc0cb;
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffc0cb;
+    }
+    footer .footer-links a {
+    color: black; 
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+footer .footer-links a:hover {
+    color: #ff69b4;
+}
+    
+</style>
+</head>
+<body>
+   <header>
+    <h1>Pets Grooming</h1>
+    <p>Where every pet gets the VIP treatment</p>
+  </header>
+    <h1><u>Payment Page</u></h1>
+    <div class="card">
+<h2>Selected Services</h2>
+<ul class="sevicesList" id="servicesList"></ul>
+<h3>Total Amount: Rs<span id="total"></span></h3>
+</div>
+
+<form id="paymentForm" action="success.html">
+    <div class="payment-method">
+<h2>Payment Options</h2><br>
+    <label>
+        <input type="radio" name="payment" value="Cash" required> Pay After Service
+    </label><br>
+    <label>
+        <input type="radio" name="payment" value="Pay Now"> Pay Now
+    </label><br>
+   
+    <button type="submit">Confirm Payment</button>
+    </div>
+</form>
+<footer>
+  <div class="footer-container">
+    <p>&copy; 2025 Pets Grooming. All rights reserved.</p>
+    <div class="footer-links"> 
+      <p>Contact Us : <a href="tel:+917017482188">7017482188 </a>|| <a href="mailto:Petgrooming@gmail.com">Petgrooming@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+<script>
+let total = localStorage.getItem('totalAmount');
+let selectedServices = JSON.parse(localStorage.getItem('selectedServices'));
+
+document.getElementById('total').textContent = total;
+let ul = document.getElementById('servicesList');
+selectedServices.forEach(service => {
+    let li = document.createElement('li');
+    li.textContent = service;
+    ul.appendChild(li);
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffc0cb;
+    }
+
+    .contact-form {
+      background-color: #fff;
+      padding: 25px;
+      margin: auto;
+      width: 100%;
+      max-width: 500px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-form h2 {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    .contact-form button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .contact-form button:hover {
+      background-color: #0056b3;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffc0cb;
+    }
+    footer .footer-links a {
+    color: black; 
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+footer .footer-links a:hover {
+    color: #ff69b4;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pets Grooming</h1>
+    <p>Where every pet gets the VIP treatment</p>
+  </header>
+  <form class="contact-form" action="Success1.html">
+    <h2>Contact Us</h2>
+    <input type="text" name="name" placeholder="Your Name" pattern="[A-Za-z\s]{4,25}" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="phone" placeholder="Enter 10-digit Phone" pattern="^[0-9]{10}$" required>
+    <input type="text" name="subject" placeholder="Subject" pattern="[A-Za-z\s]{2,150}" required> 
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+<footer>
+  <div class="footer-container">
+    <p>&copy; 2025 Pets Grooming. All rights reserved.</p>
+    <div class="footer-links"> 
+      <p>Contact Us : <a href="tel:+917017482188">7017482188 </a>|| <a href="mailto:Petgrooming@gmail.com">Petgrooming@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>
+

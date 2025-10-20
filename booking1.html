@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      color: #6a0dad;
+    }
+    form {
+      max-width: 800px;
+      margin: auto;
+      border: 2px solid #a855f7;
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section h3 {
+      margin-bottom: 1rem;
+      color: #6a0dad;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    } 
+    .radio-group ,.pet{
+      display: flex;
+      justify-content: space-between;
+      max-width: 300px;
+      margin-top: -0.1rem;
+      margin-bottom: 1rem;
+    }
+    .pet-type-btns {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .pet-type-btns button {
+      border: 2px solid #6a0dad;
+      background: #f3e8ff;
+      color: #6a0dad;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .pet-type-btns button.active {
+      background: #6a0dad;
+      color: white;
+    }
+    .n-btn {
+      display: block;
+      width: 200px;
+      margin: auto;
+      background-color: #6a0dad;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #a855f7;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffc0cb;
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffc0cb;
+    }
+    footer .footer-links a {
+    color: black; 
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+footer .footer-links a:hover {
+    color: #ff69b4;
+}
+  </style>
+</head>
+<body>
+  
+  <header>
+    <h1>Pets Grooming</h1>
+    <p>Where every pet gets the VIP treatment</p>
+  </header>
+  
+  <h2>Who wants Royal Treatment?</h2>
+  <form action="booking2.html">
+    <div class="section">
+      <h3>Add Pet</h3>
+      <div class="pet">
+        <label><input type="radio" name="petType" value="Dog" required /> 🐶 Dogs</label>
+        <label><input type="radio" name="petType" value="Cat" required /> 🐱 Cats</label>
+        
+      </div>
+      <label for="petName">Pet's Name</label>
+      <input type="text" id="petName" placeholder="Please enter your pet's name..." pattern="[A-Za-z\s]{2,25}" />
+
+      <label for="petBreed">Pet's Breed</label>
+      <input type="text" id="petBreed" placeholder="Please enter your pet's breed" required />
+
+      <label>How aggressive is your pet?</label>
+      <div class="radio-group">
+        <label><input type="radio" name="aggression" value="Low" required /> Low</label>
+        <label><input type="radio" name="aggression" value="Normal" /> Normal</label>
+        <label><input type="radio" name="aggression" value="High" /> High</label>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Add Address</h3>
+      <label for="locality">Your locality</label>
+      <input type="text" id="locality" placeholder="Search for location" required />
+
+      <label for="flat">Flat/Building</label>
+      <input type="text" id="flat" placeholder="Please add Flat, House no." required />
+
+      <label for="street">Locality/Street</label>
+      <input type="text" id="street" placeholder="Please add Locality, Street" required />
+
+      <label for="city">City</label>
+      <select id="city" required>
+        <option value="">Select</option>
+        <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Bangalore">Bangalore</option>
+        <option value="Lucknow">Lucknow</option>
+        <option value="Bareiily">Bareiily</option>
+        <option value="Gurgaon">Gurgaon</option>
+      </select>
+
+      <label for="pincode">Pincode</label>
+      <input type="text" id="pincode" placeholder="pincode" pattern="[0-9]{6}" required/>
+    </div>
+
+    <div class="section">
+      <h3>Choose Slot</h3>
+      <label for="datetime">Date and Time</label>
+      <input type="date" id="date" name="appointment_datetime"  required />
+      <select name="hour" required>
+      <option value="" disabled selected>Select Hour</option>
+      <!-- 00 to 23 hour options -->
+     
+      <option>06 am</option>
+      <option>07 am</option>
+      <option>08 am</option>
+      <option>09 am</option>
+      <option>10 am</option>
+      <option>11 am</option>
+      <option>12 pm</option>
+      <option>01 pm</option>
+      <option>02 pm</option>
+      <option>03 pm</option>
+      <option>04 pm</option>
+      <option>05 pm</option>
+      <option>06 pm</option>
+      <option>07 pm</option>
+      <option>08 pm</option>
+      <option>09 pm</option>
+      <option>10 pm</option>
+      <option>11 pm</option>
+      <option>12 pm</option>
+    </select>
+    </div>
+    
+
+    <button class="btn" type="submit">Next</button>
+  </form>
+<footer>
+  <div class="footer-container">
+    <p>&copy; 2025 Pets Grooming. All rights reserved.</p>
+    <div class="footer-links"> 
+      <p>Contact Us : <a href="tel:+917017482188">7017482188 </a>|| <a href="mailto:Petgrooming@gmail.com">Petgrooming@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+  <script>
+    function selectPetType(button, type) {
+      document.querySelectorAll('.pet-type-btns button').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    }
+    const today = new Date().toISOString().split("T")[0];
+    document.getElementById("date").setAttribute("min", today);
+   
+
+  </script>
+</body>
+</html>

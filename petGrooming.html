@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pets Grooming</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  
+  <header>
+    <h1>Pets Grooming</h1>
+    <p>Where every pet gets the VIP treatment</p>
+  </header>
+  
+  <section class="services">
+    <div class="card">
+      <img src="cat2.jpg" alt="Cat Bath" />
+      <h2>Bath & Brush</h2>
+      <p>Gentle wash, blow-dry, and brushing for a clean, fresh coat.</p>
+    </div>
+    <div class="card">
+      <img src="dog2.jpg" alt="Dog Grooming" />
+      <h2>Hair Trimming</h2>
+      <p>Styled cuts and trims by trained professionals.</p>
+    </div>
+    <div class="card">
+      <img src="cat3.jpg" alt="Dog Nail Clipping" />
+      <h2>Nail Clipping</h2>
+      <p>Quick and careful nail trimming to keep paws healthy.</p>
+    </div>
+  </section>
+
+  <section class="appointment">
+    <h2>Book an Appointment</h2>
+    <p>Schedule your pet’s grooming session today!</p>
+    <button class="btn btn-call" onclick="contact()">Contact Us</button>
+    <button class="btn btn-book" onclick="bookOnline()">Book Online</button>
+  </section>
+
+<footer>
+  <div class="footer-container">
+    <p>&copy; 2025 Pets Grooming. All rights reserved.</p>
+    <div class="footer-links"> 
+      <p>Contact Us : <a href="tel:+917017482188">7017482188 </a>|| <a href="mailto:Petgrooming@gmail.com">Petgrooming@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+  <script>
+    function contact() {
+      window.location.href = "contact.html";
+    }
+
+    function bookOnline() {
+      window.location.href = "booking1.html";
+    }
+  </script>
+</body>
+</html>

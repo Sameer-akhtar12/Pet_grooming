@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>booking2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background-color: #fff;
+      color: #333;
+    }
+    h2 {
+      text-align: center;
+      color: #6a0dad;
+    }
+    form {
+      max-width: 800px;
+      margin: auto;
+      border: 2px solid #a855f7;
+      border-radius: 12px;
+      padding: 2rem;
+    }
+    .section {
+      margin-bottom: 2rem;
+    }
+    .section h3 {
+      margin-bottom: 1rem;
+      color: #6a0dad;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .radio-group {
+      display: flex;
+      justify-content: space-between;
+      max-width: 300px;
+      margin-top: -0.5rem;
+      margin-bottom: 1rem;
+    }
+    .pet-type-btns {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .pet-type-btns button {
+      border: 2px solid #6a0dad;
+      background: #f3e8ff;
+      color: #6a0dad;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    .pet-type-btns button.active {
+      background: #6a0dad;
+      color: white;
+    }
+    .n-btn {
+      display: block;
+      width: 200px;
+      margin: auto;
+      background-color: #6a0dad;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    
+    .service {
+      border: 2px solid #a855f7;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+    }
+    .service-header {
+      background-color: #8b5cf6;
+      color: white;
+      padding: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      border-radius: 6px 6px 0 0;
+    }
+    .service-content {
+      padding: 1rem;
+    }
+    .service-content ul {
+      padding-left: 1.5rem;
+    }
+    .service-content ul li {
+      margin-bottom: 0.5rem;
+      list-style-type: none;
+    }
+    .service-content ul li::before {
+      content: '✔';
+      color: green;
+      margin-right: 0.5rem;
+    }
+    .checkbox {
+      transform: scale(1.5);
+      margin-right: 0.5rem;
+    }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #a855f7;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffc0cb;
+    }
+    header h1 {
+      margin-bottom: 0.5rem;
+      font-size: 2.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background-color: #ffc0cb;
+    }
+    footer .footer-links a {
+    color: black; 
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+footer .footer-links a:hover {
+    color: #ff69b4;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pets Grooming</h1>
+    <p>Where every pet gets the VIP treatment</p>
+  </header>
+  <h2>Who wants Royal Treatment?</h2>
+  <form onsubmit="event.preventDefault(); calculateTotal();">
+    <!-- Existing Pet and Address Form Sections -->
+
+    <!-- Services Section -->
+    <div class="section">
+      <div class="service">
+        <div class="service-header">
+          <label><input type="checkbox" class="checkbox" name="service" value="999" data-name="Basic + Hygiene"/> Basic + Hygiene</label>
+          <span><s>Rs1299/-</s> <strong style="color: gold;">Rs999/-</strong></span>
+        </div>
+        <div class="service-content">
+          <ul>
+            <li>Shampoo</li>
+            <li>Conditioning</li>
+            <li>Combing/Brushing</li>
+            <li>Teeth Cleaning/Mouth spray</li>
+            <li>Paw massage</li>
+            <li>Nail Clipping</li>
+            <li>Ear Cleaning</li>
+            <li>Eyes cleaning</li>
+            <li>Under Paw Trim</li>
+            <li>Sanitary Trim</li>
+            <li>Face Haircut</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="service">
+        <div class="service-header">
+          <label><input type="checkbox" class="checkbox" name="service" value="1199" data-name="Haircut"/> Haircut</label>
+          <span><s>Rs1499/-</s> <strong style="color: gold;">Rs1199/-</strong></span>
+        </div>
+        <div class="service-content">
+            <ul>
+              <li>Nail Clipping</li>
+              <li>Ear Cleaning</li>
+              <li>Eyes cleaning</li>
+              <li>Full Body Trimming</li>
+            </ul>
+          </div>
+      </div>
+
+      <div class="service">
+        <div class="service-header">
+          <label><input type="checkbox" class="checkbox" name="service" value="1499" data-name="Advance"/> Advance</label>
+          <span><s>Rs1999/-</s> <strong style="color: gold;">Rs1499/-</strong></span>
+        </div>
+        <div class="service-content">
+            <ul>
+            <li>Shampoo</li>
+            <li>Conditioning</li>
+            <li>Combing/Brushing</li>
+            <li>Teeth Cleaning/Mouth spray</li>
+            <li>Paw massage</li>
+            <li>Nail Clipping</li>
+            <li>Ear Cleaning</li>
+            <li>Eyes cleaning</li>
+            <li>Under Paw Trim</li>
+            <li>Sanitary Trim</li>
+            <li>Face Haircut</li>
+            <li>Body Massage</li>
+            <li>Hair Styling</li>
+            <li>Anti-Tick Bath</li>
+            <li>De-Matting</li>
+      </div>
+    </div>
+
+    <button class="btn" type="submit" >Next</button>
+  </form>
+  <footer>
+  <div class="footer-container">
+    <p>&copy; 2025 Pets Grooming. All rights reserved.</p>
+    <div class="footer-links"> 
+      <p>Contact Us : <a href="tel:+917017482188">7017482188 </a>|| <a href="mailto:Petgrooming@gmail.com">Petgrooming@gmail.com</a></p>
+    </div>
+  </div>
+</footer>
+<script>
+function calculateTotal() {
+    let checkboxes = document.querySelectorAll('input[name="service"]:checked');
+    let total = 0;
+    checkboxes.forEach(cb => {
+        total += parseFloat(cb.value);
+    });
+
+    // Store total in localStorage to pass to next page
+    localStorage.setItem('totalAmount', total);
+    localStorage.setItem('selectedServices', JSON.stringify(Array.from(checkboxes).map(cb => cb.dataset.name)));
+
+    // Redirect to next page
+    window.location.href = "booking3.html";
+}
+
+</script>
+</body>
+</html>
